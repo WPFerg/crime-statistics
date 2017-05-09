@@ -3,5 +3,5 @@ export const get = (postcode) => fetch('//api.postcodes.io/postcodes/' + postcod
     .catch(() => fetch(`//api.postcodes.io/outcodes/${postcode}/nearest`))
     .then((data) => data.json())
     .then(({ result }) => Array.isArray(result) ? result[0] : result)
-    .then(({ latitude, longitude }) => fetch(`http://data.police.uk/api/crimes-street/all-crime?lat=${latitude}&lng=${longitude}`))
+    .then(({ latitude, longitude }) => fetch(`//data.police.uk/api/crimes-street/all-crime?lat=${latitude}&lng=${longitude}`))
     .then((data) => data.json())
